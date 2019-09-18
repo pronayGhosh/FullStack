@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>ProjectManagerServiceImpl.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">projectmanager-server (Jan 19, 2019 7:59:26 PM)</a> &gt; <a href="../../index.html" class="el_group">projectmanager-server</a> &gt; <a href="../index.html" class="el_bundle">src/main/java</a> &gt; <a href="index.source.html" class="el_package">com.springboot.service</a> &gt; <span class="el_source">ProjectManagerServiceImpl.java</span></div><h1>ProjectManagerServiceImpl.java</h1><pre class="source lang-java linenums">package com.springboot.service;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.dozer.Mapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.springboot.bo.ParentTaskVO;
+import com.springboot.bo.ProjectVO;
+import com.springboot.bo.TaskVO;
+import com.springboot.bo.UserVO;
+import com.springboot.entity.ParentTask;
+import com.springboot.entity.Project;
+import com.springboot.entity.Task;
+import com.springboot.entity.User;
+import com.springboot.repository.ParentTaskManagerRepository;
+import com.springboot.repository.ProjectManagerRepository;
+import com.springboot.repository.TaskManagerRepository;
+import com.springboot.repository.UserManagerRepository;
+import com.springboot.service.ProjectManagerService;
+
+/**
+ * @author 555194
+ *
+ */
+@Service
+public class ProjectManagerServiceImpl implements ProjectManagerService{
+
+	private ProjectManagerRepository projectManagerRepository;
+	
+	private TaskManagerRepository taskManagerRepository;
+	
+	private ParentTaskManagerRepository parentTaskManagerRepository;
+	
+	private UserManagerRepository userManagerRepository;
+	
+	private Mapper dozerMapper;
+	
+	@Autowired
+<span class="fc" id="L42">	public ProjectManagerServiceImpl(ProjectManagerRepository projectManagerRepository,</span>
+			TaskManagerRepository taskManagerRepository, 
+			ParentTaskManagerRepository parentTaskManagerRepository,
+			UserManagerRepository userManagerRepository, Mapper dozerMapper) {
+<span class="fc" id="L46">		this.projectManagerRepository = projectManagerRepository;</span>
+<span class="fc" id="L47">		this.taskManagerRepository = taskManagerRepository;</span>
+<span class="fc" id="L48">		this.parentTaskManagerRepository = parentTaskManagerRepository;</span>
+<span class="fc" id="L49">		this.userManagerRepository = userManagerRepository;</span>
+<span class="fc" id="L50">		this.dozerMapper = dozerMapper;</span>
+<span class="fc" id="L51">	}</span>
+
+	
+	public List&lt;TaskVO&gt; retriveTasks(){
+<span class="fc" id="L55">		List&lt;TaskVO&gt; taskToBeReturned = new ArrayList&lt;TaskVO&gt;();</span>
+<span class="fc" id="L56">		List&lt;Task&gt; tasksRetrived = taskManagerRepository.findAll();</span>
+<span class="fc bfc" id="L57" title="All 2 branches covered.">		for(Task task: tasksRetrived) {</span>
+<span class="fc" id="L58">			taskToBeReturned.add(dozerMapper.map(task, TaskVO.class));</span>
+		}
+<span class="fc" id="L60">		return taskToBeReturned;</span>
+	}
+	
+	public void updateTask(TaskVO task) {
+<span class="fc" id="L64">		taskManagerRepository.save(dozerMapper.map(task, Task.class));</span>
+<span class="fc" id="L65">	}</span>
+	
+	
+	public List&lt;ParentTaskVO&gt; retriveParentTasks(){
+<span class="fc" id="L69">		List&lt;ParentTaskVO&gt; taskToBeReturned = new ArrayList&lt;ParentTaskVO&gt;();</span>
+<span class="fc" id="L70">		List&lt;ParentTask&gt; tasksRetrived = parentTaskManagerRepository.findAll();</span>
+<span class="fc bfc" id="L71" title="All 2 branches covered.">		for(ParentTask task: tasksRetrived) {</span>
+<span class="fc" id="L72">			taskToBeReturned.add(dozerMapper.map(task, ParentTaskVO.class));</span>
+		}
+<span class="fc" id="L74">		return taskToBeReturned;</span>
+	}
+	
+	public List&lt;ParentTaskVO&gt; retriveParentTasksForProjectId(String projectId){
+<span class="fc" id="L78">		List&lt;ParentTaskVO&gt; taskToBeReturned = new ArrayList&lt;ParentTaskVO&gt;();</span>
+<span class="fc" id="L79">		List&lt;ParentTask&gt; tasksRetrived = parentTaskManagerRepository.findAllParentTaskByProjectId(projectId); </span>
+<span class="fc bfc" id="L80" title="All 2 branches covered.">		for(ParentTask task: tasksRetrived) {</span>
+<span class="fc" id="L81">			taskToBeReturned.add(dozerMapper.map(task, ParentTaskVO.class));</span>
+		}
+<span class="fc" id="L83">		return taskToBeReturned;</span>
+	}
+	
+	public void updateParentTask(ParentTaskVO parentTask) {
+<span class="fc" id="L87">		parentTaskManagerRepository.save(dozerMapper.map(parentTask, ParentTask.class));</span>
+<span class="fc" id="L88">	}</span>
+	
+	
+	public List&lt;ProjectVO&gt; retriveProjects(){
+<span class="fc" id="L92">		List&lt;ProjectVO&gt; projectToBeReturned = new ArrayList&lt;ProjectVO&gt;();</span>
+<span class="fc" id="L93">		List&lt;Project&gt; projectsRetrived = projectManagerRepository.findAll();</span>
+<span class="fc bfc" id="L94" title="All 2 branches covered.">		for(Project project: projectsRetrived) {</span>
+<span class="fc" id="L95">			ProjectVO projectVO = dozerMapper.map(project, ProjectVO.class);</span>
+<span class="fc" id="L96">			projectVO.setNoOfTasks(taskManagerRepository.getTotalTasksForProjectId(projectVO.getProjectId()));</span>
+<span class="fc" id="L97">			projectToBeReturned.add(projectVO);</span>
+		}
+<span class="fc" id="L99">		return projectToBeReturned;</span>
+	}
+	
+	public void updateProject(ProjectVO project) {
+<span class="fc" id="L103">		projectManagerRepository.save(dozerMapper.map(project, Project.class));</span>
+<span class="fc" id="L104">	}</span>
+	
+	
+	public List&lt;UserVO&gt; retriveUsers(){
+<span class="fc" id="L108">		List&lt;UserVO&gt; userToBeReturned = new ArrayList&lt;UserVO&gt;();</span>
+<span class="fc" id="L109">		List&lt;User&gt; usersRetrived = userManagerRepository.findAll();</span>
+<span class="fc bfc" id="L110" title="All 2 branches covered.">		for(User user: usersRetrived) {</span>
+<span class="fc" id="L111">			userToBeReturned.add(dozerMapper.map(user, UserVO.class));</span>
+		}
+<span class="fc" id="L113">		return userToBeReturned;</span>
+	}
+	
+	public void updateUser(UserVO user) {
+<span class="fc" id="L117">		User userStore = dozerMapper.map(user, User.class);</span>
+<span class="fc" id="L118">		userManagerRepository.save(userStore);</span>
+<span class="fc" id="L119">	}</span>
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span>projectmanager-server (Jan 19, 2019 7:59:26 PM)</div></body></html>

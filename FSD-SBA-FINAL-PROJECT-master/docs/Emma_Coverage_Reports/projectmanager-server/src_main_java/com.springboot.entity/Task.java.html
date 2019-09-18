@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>Task.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">projectmanager-server (Jan 19, 2019 7:59:26 PM)</a> &gt; <a href="../../index.html" class="el_group">projectmanager-server</a> &gt; <a href="../index.html" class="el_bundle">src/main/java</a> &gt; <a href="index.source.html" class="el_package">com.springboot.entity</a> &gt; <span class="el_source">Task.java</span></div><h1>Task.java</h1><pre class="source lang-java linenums">package com.springboot.entity;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+/**
+ * @author 555194
+ *
+ */
+@Entity
+@Table(name = &quot;tasks&quot;)
+public class Task {
+
+	@Id
+	@Column(name = &quot;task_id&quot;)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long taskId;
+
+	@Column(name = &quot;task_name&quot;)
+	private String taskName;
+
+	@Column(name = &quot;start_date&quot;)
+	private String startDate;
+
+	@Column(name = &quot;end_date&quot;)
+	private String endDate;
+
+	@Column(name = &quot;priority&quot;)
+	private String priority;
+
+	@Column(name = &quot;status&quot;)
+	private String status;
+
+	@OneToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
+	@JoinColumn(name = &quot;parent_task_id&quot;, insertable = true, updatable = true)
+	private ParentTask parentTask;
+
+	/**
+	 * @return parentTask
+	 */
+	public ParentTask getParentTask() {
+<span class="fc" id="L50">		return parentTask;</span>
+	}
+
+	/**
+	 * @param parentTask
+	 */
+	public void setParentTask(ParentTask parentTask) {
+<span class="fc" id="L57">		this.parentTask = parentTask;</span>
+<span class="fc" id="L58">	}</span>
+
+	@OneToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
+	@JoinColumn(name = &quot;employee_id&quot;, insertable = true, updatable = true)
+	private User employeeDetails;
+
+	/**
+	 * @return employeeDetails
+	 */
+	public User getEmployeeDetails() {
+<span class="fc" id="L68">		return employeeDetails;</span>
+	}
+
+	/**
+	 * @param employeeDetails
+	 */
+	public void setEmployeeDetails(User employeeDetails) {
+<span class="fc" id="L75">		this.employeeDetails = employeeDetails;</span>
+<span class="fc" id="L76">	}</span>
+
+	@OneToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
+	@JoinColumn(name = &quot;project_id&quot;, insertable = true, updatable = true)
+	private Project projectDetails;
+
+	/**
+	 * @return projectDetails
+	 */
+	public Project getProjectDetails() {
+<span class="fc" id="L86">		return projectDetails;</span>
+	}
+
+	/**
+	 * @param projectDetails
+	 */
+	public void setProjectDetails(Project projectDetails) {
+<span class="fc" id="L93">		this.projectDetails = projectDetails;</span>
+<span class="fc" id="L94">	}</span>
+
+<span class="fc" id="L96">	public Task() {</span>
+
+<span class="fc" id="L98">	}</span>
+
+	/**
+	 * @return the taskId
+	 */
+	public Long getTaskId() {
+<span class="fc" id="L104">		return taskId;</span>
+	}
+
+	/**
+	 * @param taskId the taskId to set
+	 */
+	public void setTaskId(Long taskId) {
+<span class="fc" id="L111">		this.taskId = taskId;</span>
+<span class="fc" id="L112">	}</span>
+
+	/**
+	 * @return the taskName
+	 */
+	public String getTaskName() {
+<span class="fc" id="L118">		return taskName;</span>
+	}
+
+	/**
+	 * @param taskName the taskName to set
+	 */
+	public void setTaskName(String taskName) {
+<span class="fc" id="L125">		this.taskName = taskName;</span>
+<span class="fc" id="L126">	}</span>
+
+	/**
+	 * @return the startDate
+	 */
+	public String getStartDate() {
+<span class="fc" id="L132">		return startDate;</span>
+	}
+
+	/**
+	 * @param startDate the startDate to set
+	 */
+	public void setStartDate(String startDate) {
+<span class="fc" id="L139">		this.startDate = startDate;</span>
+<span class="fc" id="L140">	}</span>
+
+	/**
+	 * @return the endDate
+	 */
+	public String getEndDate() {
+<span class="fc" id="L146">		return endDate;</span>
+	}
+
+	/**
+	 * @param endDate the endDate to set
+	 */
+	public void setEndDate(String endDate) {
+<span class="fc" id="L153">		this.endDate = endDate;</span>
+<span class="fc" id="L154">	}</span>
+
+	/**
+	 * @return the priority
+	 */
+	public String getPriority() {
+<span class="fc" id="L160">		return priority;</span>
+	}
+
+	/**
+	 * @param priority the priority to set
+	 */
+	public void setPriority(String priority) {
+<span class="fc" id="L167">		this.priority = priority;</span>
+<span class="fc" id="L168">	}</span>
+
+	/**
+	 * @return the status
+	 */
+	public String getStatus() {
+<span class="fc" id="L174">		return status;</span>
+	}
+
+	/**
+	 * @param status the status to set
+	 */
+	public void setStatus(String status) {
+<span class="fc" id="L181">		this.status = status;</span>
+<span class="fc" id="L182">	}</span>
+
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span>projectmanager-server (Jan 19, 2019 7:59:26 PM)</div></body></html>

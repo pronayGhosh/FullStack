@@ -1,0 +1,54 @@
+
+.project-date-selection{
+    margin-left:20px;
+}
+.margin-top-date-table{
+    margin-top:20px;
+}
+.grey-back-drop-list{
+    background-color: #e9ecef;
+    float:left;
+    min-height:120px; 
+    width:70%;
+    margin:5px;
+    padding-top:5px;
+    padding-bottom:5px;
+}
+.bold-font{
+    font-weight:500;
+}
+label{
+    font-variant: initial !important;
+    color:#000000 !important;
+    font-weight:400 !important;
+    font-size:large!important;
+}
+.add, .reset{
+    background-color:#cc6699 !important;
+    color:white !important;
+    font-weight: 600 !important;
+}
+.menu{
+    background-color:lightcoral !important;
+    color:white !important;
+    font-weight: 500 !important;
+}
+.routerBorder{
+    background-color: white !important;
+}
+.edit{
+    background-color: #4d88ff !important;
+    color:white !important;
+    font-weight: 600 !important;
+}
+.end{
+    background-color: #669999 !important;
+    color:white !important;
+    font-weight: 600 !important;
+}
+.details{
+    color: black;
+}
+.grey-back-drop-list{
+    background-color: #ffe6cc!important;
+}

@@ -1,0 +1,17 @@
+D:\FSD-SBA-FINAL-PROJECT-master\FSD-SBA-FINAL-PROJECT-master\projectmanager-server\src\main\java\com\springboot\entity\Project.java
+D:\FSD-SBA-FINAL-PROJECT-master\FSD-SBA-FINAL-PROJECT-master\projectmanager-server\src\main\java\com\springboot\controller\ProjectManagerController.java
+D:\FSD-SBA-FINAL-PROJECT-master\FSD-SBA-FINAL-PROJECT-master\projectmanager-server\src\main\java\com\springboot\Application.java
+D:\FSD-SBA-FINAL-PROJECT-master\FSD-SBA-FINAL-PROJECT-master\projectmanager-server\src\main\java\com\springboot\bo\ProjectVO.java
+D:\FSD-SBA-FINAL-PROJECT-master\FSD-SBA-FINAL-PROJECT-master\projectmanager-server\src\main\java\com\springboot\entity\Task.java
+D:\FSD-SBA-FINAL-PROJECT-master\FSD-SBA-FINAL-PROJECT-master\projectmanager-server\src\main\java\com\springboot\entity\ParentTask.java
+D:\FSD-SBA-FINAL-PROJECT-master\FSD-SBA-FINAL-PROJECT-master\projectmanager-server\src\main\java\com\springboot\bo\ParentTaskVO.java
+D:\FSD-SBA-FINAL-PROJECT-master\FSD-SBA-FINAL-PROJECT-master\projectmanager-server\src\main\java\com\springboot\bo\UserVO.java
+D:\FSD-SBA-FINAL-PROJECT-master\FSD-SBA-FINAL-PROJECT-master\projectmanager-server\src\main\java\com\springboot\entity\User.java
+D:\FSD-SBA-FINAL-PROJECT-master\FSD-SBA-FINAL-PROJECT-master\projectmanager-server\src\main\java\com\springboot\repository\ParentTaskManagerRepository.java
+D:\FSD-SBA-FINAL-PROJECT-master\FSD-SBA-FINAL-PROJECT-master\projectmanager-server\src\main\java\com\springboot\repository\UserManagerRepository.java
+D:\FSD-SBA-FINAL-PROJECT-master\FSD-SBA-FINAL-PROJECT-master\projectmanager-server\src\main\java\com\springboot\bo\TaskVO.java
+D:\FSD-SBA-FINAL-PROJECT-master\FSD-SBA-FINAL-PROJECT-master\projectmanager-server\src\main\java\com\springboot\repository\TaskManagerRepository.java
+D:\FSD-SBA-FINAL-PROJECT-master\FSD-SBA-FINAL-PROJECT-master\projectmanager-server\src\main\java\com\springboot\service\ProjectManagerService.java
+D:\FSD-SBA-FINAL-PROJECT-master\FSD-SBA-FINAL-PROJECT-master\projectmanager-server\src\main\java\com\springboot\repository\ProjectManagerRepository.java
+D:\FSD-SBA-FINAL-PROJECT-master\FSD-SBA-FINAL-PROJECT-master\projectmanager-server\src\main\java\com\springboot\service\ProjectManagerServiceImpl.java
+D:\FSD-SBA-FINAL-PROJECT-master\FSD-SBA-FINAL-PROJECT-master\projectmanager-server\src\main\java\com\springboot\filter\CORSFilter.java

@@ -1,0 +1,9 @@
+docker run -p 8082:8082 projectmanager-image:latest
+
+docker exec -it <container id> sh
+
+Service: curl http://localhost:8082/api/tasks
+
+UI Home page: curl http://localhost:8082/index.html
+
+

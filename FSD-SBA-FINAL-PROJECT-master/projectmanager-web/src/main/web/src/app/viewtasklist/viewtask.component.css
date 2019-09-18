@@ -1,0 +1,32 @@
+label, .h6{
+   font-variant: initial !important;
+    color:#000000 !important;
+    font-weight:400 !important;
+    font-size:large!important;
+}
+th{
+    font-variant: initial;
+    color:yellowgreen !important;
+}
+.edit, .end{
+    background-color: #cc6699 !important;
+    color:white !important;
+    font-weight: 500 !important;
+}
+.modal-footer, .modal-header, .modal-title, .modal-body{
+    background-color: #ffddcc !important;
+    color:black !important;
+}
+.success, .search{
+   background-color:#4d88ff!important;
+    color:white !important;
+    font-weight: 500 !important;
+}
+.routerBorder{
+    background-color: white !important;
+}
+.menu{
+    background-color:lightcoral !important;
+    color:white !important;
+    font-weight: 500 !important;
+}
